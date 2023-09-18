@@ -6,6 +6,28 @@
     text-align: center;
 }
 
+header {
+    height: 6vh;
+    margin: 10px 0px;
+}
+
+header ul {
+    text-transform: capitalize;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+li {
+    color: black;
+    text-decoration: dotted;
+    cursor: pointer;
+}
+
 h1 {
 
 }

@@ -1,6 +1,8 @@
 export function initalModule() {
-    
+
 const contentDiv = document.querySelector('#content');
+contentDiv.replaceChildren()
+
 const heading = document.createElement('h1');
 heading.textContent = "Resaurant Page";
 contentDiv.appendChild(heading);
