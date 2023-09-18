@@ -1,1 +1,5 @@
-console.log('This is my console.log statement from /src/index.js HAHA!')
+import * as module from './initialmodule'
+
+console.log("statement always banging");
+
+module.initalModule();
