@@ -1,11 +1,15 @@
 export function initalModule() {
 
 const contentDiv = document.querySelector('#content');
-contentDiv.replaceChildren()
+contentDiv.replaceChildren();
 
 const heading = document.createElement('h1');
-heading.textContent = "Resaurant Page";
+heading.textContent = "GUMBO YAYA";
 contentDiv.appendChild(heading);
+
+const subTitle = document.createElement('h2');
+subTitle.textContent = "SOUTHERN KITCHEN";
+contentDiv.appendChild(subTitle);
 
 const topImage = document.createElement('img');
 topImage.classList.add('top-image');
