@@ -85,12 +85,46 @@ h1:hover {
 }
 
 .red-facade {
-width: 100vw;
-height: 78vh;
-display: flex;
-flex-direction: row;
-justify-content: center;
-column-gap: 10vh;
+  width: 100vw;
+  height: 78vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hours-graff {
+  width: 15vw;
+  height: max-content;
+  color: #FFD181;
+  font-family: UnderStation;
+  justify-self: center;
+}
+
+.menu-graff {
+  display: flex;
+  flex-direction: row;
+  width: 15vw;
+  justify-content: center;
+  column-gap: 2vw;
+  margin-left: 2.5vw;
+}
+
+.meals {
+  color: #99E5E4;
+  font-family: UnderStation;
+  text-align: start;
+  height: max-content;
+}
+
+.prices {
+  color: #FFD181;
+  font-family: UnderStation;
+  text-align: end;
+}
+
+h2 {
+  color: #99E5E4;
 }
 
 .door-wrapper {
@@ -98,6 +132,7 @@ column-gap: 10vh;
   height: 78vh;
   border: 1px solid #9A260A;
   position: relative;
+  z-index: 5;
   /* 3D */
   perspective: 1000px;
 }
@@ -106,8 +141,18 @@ column-gap: 10vh;
   width: 35vw;
   height: 60vh;
   border: 10px solid #000;
-  background: transparent;
-  box-shadow: 0px 4px 44px 35px rgba(0, 0, 0, 0.25) inset;
+  /* From https://css.glass */
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)), url(./assets/2023-09-14.jpg);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  background-size: cover;
+  background-repeat: no-repeat;
+/* box-shadow: 0px 4px 44px 35px rgba(0, 0, 0, 0.25) inset; */
+  margin-left: 5vw;
+  top: 0;
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
 }
 
 .door {
@@ -120,6 +165,7 @@ column-gap: 10vh;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 5;
 }
 
 .left-door {
@@ -130,7 +176,9 @@ column-gap: 10vh;
   transform-origin: left;
   transition: transform 0.5s;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  row-gap: 3%;
+  padding-top: 3%;
 }
 
 .right-door {
@@ -141,22 +189,27 @@ column-gap: 10vh;
   transform-origin: right;
   transition: transform 0.5s;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  row-gap: 3%;
+  padding-top: 3%;
 }
 
 .top-door {
   z-index: 5;
   position: absolute;
   top: 0;
-  background-color: #D0340E;
+  background: transparent;
   height: 20%;
   width: 100%;
   box-shadow: 0px 19px 10px 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .door-relief {
-  width: 70% ;
-  height: 30%;
+  width: 80% ;
+  height: 20%;
   border: 2px solid #9A260A;
 }
 
@@ -167,4 +220,21 @@ column-gap: 10vh;
 
 .door-wrapper:hover .right-door{
   transform: rotateY(140deg);
+}
+
+.vitre {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)), url(./assets/backgrnd.jpg);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid #9A260A;
+  width: 80% ;
+  height: 50%;
+}
+
+img {
+  height: max-content;
+  width: auto;
+  z-index: 6;
 }
