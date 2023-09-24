@@ -1,4 +1,7 @@
 import yelpImg from './assets/Yelp.png';
+import tripadvisor from './assets/tripadvisor.png';
+import streetsign from './assets/streetsign.png';
+import timeout from './assets/timeout.png'
 
 export function initalModule() {
 
@@ -25,7 +28,6 @@ divSubTitle.appendChild(subTitle);
 divSubTitle.appendChild(subTitle2);
 contentDiv.appendChild(divSubTitle);
 
-// Animation mis en pause à chaque passage de souris
 const redFacade = document.createElement('div');
 redFacade.classList.add('red-facade');
 contentDiv.appendChild(redFacade);
@@ -56,6 +58,25 @@ const orangeWindow = document.createElement('div');
 orangeWindow.classList.add('orange-window');
 redFacade.appendChild(orangeWindow);
 
+//écrire SOUL FOOD en gros sur la facade
+const soulFoodSVG = document.createElement('svg');
+orangeWindow.appendChild(soulFoodSVG);
+soulFoodSVG.setAttribute('viewBox', '0 0 500 500')
+
+const SVGPath = document.createElement('path');
+SVGPath.id = 'curve';
+SVGPath.setAttribute('d', 'M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97');
+soulFoodSVG.appendChild(SVGPath);
+
+const SVGText = document.createElement('text');
+SVGText.setAttribute('width', '500');
+soulFoodSVG.appendChild(SVGText);
+
+const textPath = document.createElement('textPath');
+textPath.setAttribute('xlink:href', '#curve');
+textPath.innerHTML = 'SOUL FOOD'
+SVGText.appendChild(textPath);
+
 const relief3 = document.createElement('div');
 const relief4 = document.createElement('div');
 relief3.classList.add('vitre');
@@ -84,19 +105,44 @@ prices.innerHTML = '11 €<br>12 €<br>13 €<br>12 €<br>11 €<br>13 €<br>
 menuGraff.appendChild(prices)
 redFacade.appendChild(menuGraff);
 
+// panneau de la rue sur 
+const streetsignImg = document.createElement('img');
+streetsignImg.src = streetsign;
+streetsignImg.classList.add('street-sign');
+topDoor.appendChild(streetsignImg);
+
 //logos on the window
+const allLogos = document.createElement('div');
+orangeWindow.appendChild(allLogos);
 
-orangeWindow.appendChild(yelpImg);
+//yelp
+const yelpLink = document.createElement('a');
+yelpLink.href = 'https://www.yelp.com/biz/gumbo-yaya-paris';
+const yelp = document.createElement('img');
+yelp.src = yelpImg;
+yelp.classList.add('icons');
+allLogos.appendChild(yelpLink);
+yelpLink.appendChild(yelp);
 
-const tripadvisor = document.createElement('img');
-tripadvisor.src = './assets/tripadvisor.png'
-orangeWindow.appendChild(tripadvisor);
+//tripadvisor
+const tripadvisorLink = document.createElement('a');
+tripadvisorLink.href = 'https://www.tripadvisor.fr/Restaurant_Review-g187147-d8786534-Reviews-Gumbo_Yaya_Chicken_And_Waffles-Paris_Ile_de_France.html';
+const tripadvisorImg = document.createElement('img');
+tripadvisorImg.src = tripadvisor;
+tripadvisorImg.classList.add('icons');
+allLogos.appendChild(tripadvisorLink);
+tripadvisorLink.appendChild(tripadvisorImg);
 
-const timeout = document.createElement('img');
-timeout.src = './assets/timeout.png';
-orangeWindow.appendChild(timeout);
+//timeout
+const timeoutLink = document.createElement('a');
+timeoutLink.href = 'https://www.timeout.com/paris/en/restaurants/gumbo-yaya';
+const timeoutImg = document.createElement('img');
+timeoutImg.src = timeout;
+timeoutImg.classList.add('icons');
+timeoutLink.appendChild(timeoutImg)
+allLogos.appendChild(timeoutLink);
 
-const streetSign = document.createElement('img');
-streetSign.src = './assets/streetsign.png';
-topDoor.appendChild(streetSign);
+
+
+
 }

@@ -11,6 +11,11 @@
   src: url(./assets/under_station/UnderStation.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: Riffic;
+  src: url(./assets/riffic/RifficFree-Bold.ttf) format("truetype");
+}
+
 html {
   overflow: hidden;
 }
@@ -151,8 +156,21 @@ h2 {
   margin-left: 5vw;
   top: 0;
   display: flex;
-  align-items: end;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+}
+
+textPath {
+ font-family: Riffic, cursive;
+ color: white;
+ text-shadow: -11px 5px 0px #000;
+ font-size: 4em;
+}
+
+svg {
+  padding-bottom: 29%;
+  padding-left: 18%;
 }
 
 .door {
@@ -237,4 +255,18 @@ img {
   height: max-content;
   width: auto;
   z-index: 6;
+}
+
+.icons {
+  height: 6vh;
+  width: auto;
+  padding: 3px;
+}
+.logos-link {
+  border: 1px solid white;
+}
+.street-sign {
+  height: 17vh;
+  width: auto;
+  transform: rotate(-10deg);
 }
