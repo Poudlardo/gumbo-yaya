@@ -2,8 +2,12 @@ import yelpImg from './assets/Yelp.png';
 import tripadvisor from './assets/tripadvisor.png';
 import streetsign from './assets/streetsign.png';
 import timeout from './assets/timeout.png'
+import plat1 from './assets/platUn.png';
+import plat2 from './assets/platDeux.png';
+import plat3 from './assets/platTrois.png';
+import plat4 from './assets/platQuatre.png'
 
-export function initalModule() {
+export function initialModule() {
 
 const contentDiv = document.querySelector('#content');
 contentDiv.replaceChildren();
@@ -45,23 +49,48 @@ redFacade.appendChild(doorWrapper);
 const leftDoor = document.createElement('div');
 leftDoor.classList.add('left-door','door');
 doorWrapper.appendChild(leftDoor);
+
 // right door
 const rightDoor = document.createElement('div');
 rightDoor.classList.add('right-door','door');
 doorWrapper.appendChild(rightDoor);
-// haut de porte
+
+// Haut de porte
 const topDoor = document.createElement('div');
 topDoor.classList.add('top-door');
 doorWrapper.appendChild(topDoor);
+
+// div Pages Container
+const pagesContainer = document.createElement('div');
+pagesContainer.classList.add('pages-container')
+doorWrapper.appendChild(pagesContainer);
+
+// Page INFO
+const pageInfo = document.createElement('h2');
+pageInfo.innerText = "★ INFO ★";
+pageInfo.classList.add('info-page');
+pagesContainer.appendChild(pageInfo);
+
+// Page ABOUT
+const pageAbout = document.createElement('h2');
+pageAbout.innerText = "★ ABOUT ★";
+pageAbout.classList.add('about-page');
+pagesContainer.appendChild(pageAbout);
 
 const orangeWindow = document.createElement('div');
 orangeWindow.classList.add('orange-window');
 redFacade.appendChild(orangeWindow);
 
-//écrire SOUL FOOD en gros sur la facade
+// Ecrire SOUL FOOD en gros sur la facade
 const soulFoodSVG = document.createElement('svg');
 orangeWindow.appendChild(soulFoodSVG);
 soulFoodSVG.setAttribute('viewBox', '0 0 500 500')
+
+// Ecrire 2,3 en plus sur la facade
+const description = document.createElement('h2');
+description.classList.add('dscrptn');
+description.innerHTML = 'WAFFLE HOUSE<br>FRIED CHICKEN<br>BURGERS';
+orangeWindow.appendChild(description);
 
 const SVGPath = document.createElement('path');
 SVGPath.id = 'curve';
@@ -73,7 +102,7 @@ SVGText.setAttribute('width', '500');
 soulFoodSVG.appendChild(SVGText);
 
 const textPath = document.createElement('textPath');
-textPath.setAttribute('xlink:href', '#curve');
+textPath.setAttributeNS('https://www.w3.org/1999/xlink','href', '#curve');
 textPath.innerHTML = 'SOUL FOOD'
 SVGText.appendChild(textPath);
 
@@ -113,6 +142,7 @@ topDoor.appendChild(streetsignImg);
 
 //logos on the window
 const allLogos = document.createElement('div');
+allLogos.classList.add('all-logos')
 orangeWindow.appendChild(allLogos);
 
 //yelp
