@@ -1,4 +1,4 @@
-# js-restaurant-page
+# GUMBO YAYA
 
 Small website page dedicated to Gumbo Yaya restaurant, the go-to place for fried chicken and waffles in Paris !
 
