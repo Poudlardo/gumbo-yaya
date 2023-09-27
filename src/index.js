@@ -1,6 +1,5 @@
 import { initialModule } from './initialmodule';
-
-import css from './style.css';
+import './style.css';
 
 console.log("statement always banging");
 
