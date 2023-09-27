@@ -1,13 +1,13 @@
 import { initialModule } from './initialmodule';
-import { info } from './info';
-import { about } from './about';
-import css from './style.css'
+
+import css from './style.css';
 
 console.log("statement always banging");
 
 initialModule();
 
 let PageLoader = (() => {
+
     let infoPage = document.querySelector('.info-page');
     infoPage.addEventListener('click', info);
 
@@ -17,3 +17,4 @@ let PageLoader = (() => {
     let initalModule = document.querySelector('.home-page');
     initalModule.addEventListener('click', initialModule);
 })()
+

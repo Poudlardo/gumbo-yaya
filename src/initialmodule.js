@@ -2,15 +2,13 @@ import yelpImg from './assets/Yelp.png';
 import tripadvisor from './assets/tripadvisor.png';
 import streetsign from './assets/streetsign.png';
 import timeout from './assets/timeout.png'
-import plat1 from './assets/platUn.png';
-import plat2 from './assets/platDeux.png';
 import plat3 from './assets/platTrois.png';
-import plat4 from './assets/platQuatre.png'
 
 export function initialModule() {
 
 const contentDiv = document.querySelector('#content');
 contentDiv.replaceChildren();
+
 // La div du Titre 
 const heading = document.createElement('h1');
 const divHeading = document.createElement('div');
@@ -45,6 +43,11 @@ const doorWrapper = document.createElement('div');
 doorWrapper.classList.add('door-wrapper');
 redFacade.appendChild(doorWrapper);
 
+const gumboImg = document.createElement('img');
+gumboImg.src = plat3;
+gumboImg.classList.add('rotating')
+doorWrapper.appendChild(gumboImg);
+
 // left door
 const leftDoor = document.createElement('div');
 leftDoor.classList.add('left-door','door');
@@ -64,18 +67,6 @@ doorWrapper.appendChild(topDoor);
 const pagesContainer = document.createElement('div');
 pagesContainer.classList.add('pages-container')
 doorWrapper.appendChild(pagesContainer);
-
-// Page INFO
-const pageInfo = document.createElement('h2');
-pageInfo.innerText = "★ INFO ★";
-pageInfo.classList.add('info-page');
-pagesContainer.appendChild(pageInfo);
-
-// Page ABOUT
-const pageAbout = document.createElement('h2');
-pageAbout.innerText = "★ ABOUT ★";
-pageAbout.classList.add('about-page');
-pagesContainer.appendChild(pageAbout);
 
 const orangeWindow = document.createElement('div');
 orangeWindow.classList.add('orange-window');

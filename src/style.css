@@ -253,10 +253,13 @@ textPath {
   cursor: pointer;
 }
 
+.about-page:hover, .info-page:hover, .home-page:hover {
+  color: #FFD181;
+}
+
 .pages-container {
   height: 100%;
   width: 100%;
-  border: 3px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -308,12 +311,46 @@ img {
   margin-right: 62%;
 }
 
-/* about page */
-
-.sub-header {
-  height: max-content;
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 5s linear infinite;
+  -moz-animation: rotating 5s linear infinite;
+  -ms-animation: rotating 5s linear infinite;
+  -o-animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+  margin-top: 55%;
+  height: 40%;
   width: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+}
+
+.rotating:active {
+  animation: rotate 1s, scale 3s;
+}
+
+
+@keyframes spin { 
+  100% { 
+      transform: rotate(180deg);
+  } 
+}
+
+@keyframes scale {
+  100% {
+       transform: scaleX(1.5) scaleY(1.5);
+  }
 }
